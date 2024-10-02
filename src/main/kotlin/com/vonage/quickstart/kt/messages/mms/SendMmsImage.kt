@@ -19,7 +19,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt
+package com.vonage.quickstart.kt.messages.mms
 
-fun envVar(name: String): String =
-    System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
+import com.vonage.client.kt.*
+import com.vonage.quickstart.kt.*
+
+fun main() {
+    val client = Vonage {
+        applicationId(VONAGE_APPLICATION_ID)
+        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+    }
+
+    val messageId = client.messages.send(mmsImage {
+        to(TO_NUMBER); from(VONAGE_FROM_NUMBER)
+        url(IMAGE_URL); caption(IMAGE_CAPTION)
+    })
+}

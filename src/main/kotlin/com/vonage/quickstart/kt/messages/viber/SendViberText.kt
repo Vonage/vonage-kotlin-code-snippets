@@ -21,14 +21,8 @@
  */
 package com.vonage.quickstart.kt.messages.viber
 
-import com.vonage.client.kt.Vonage
-import com.vonage.client.kt.viberText
-import com.vonage.quickstart.kt.envVar
-
-val VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID")
-val VONAGE_APPLICATION_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH")
-val TO_NUMBER = envVar("TO_NUMBER")
-val VONAGE_VIBER_SERVICE_MESSAGE_ID = envVar("VONAGE_VIBER_SERVICE_MESSAGE_ID")
+import com.vonage.client.kt.*
+import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {

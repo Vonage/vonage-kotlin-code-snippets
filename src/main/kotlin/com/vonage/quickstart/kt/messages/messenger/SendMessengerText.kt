@@ -21,14 +21,8 @@
  */
 package com.vonage.quickstart.kt.messages.messenger
 
-import com.vonage.client.kt.Vonage
-import com.vonage.client.kt.messengerText
-import com.vonage.quickstart.kt.envVar
-
-val VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID")
-val VONAGE_APPLICATION_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH")
-val FB_RECIPIENT_ID = envVar("FB_RECIPIENT_ID")
-val VONAGE_FB_SENDER_ID = envVar("VONAGE_FB_SENDER_ID")
+import com.vonage.client.kt.*
+import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
