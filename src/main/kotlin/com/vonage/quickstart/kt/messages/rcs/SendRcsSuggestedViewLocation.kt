@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.messages.whatsapp
+package com.vonage.quickstart.kt.messages.rcs
 
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
@@ -31,10 +31,30 @@ fun main() {
     }
 
     val messageId = client.messages.send(
-        whatsappText {
+        rcsCustom {
             to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
-            text("This is a WhatsApp text message sent using the Messages API")
+            from(RCS_SENDER_ID)
+            custom(mapOf(
+                "contentMessage" to mapOf(
+                    "text" to "Drop by our office!",
+                    "suggestions" to listOf(
+                        mapOf(
+                            "action" to mapOf(
+                                "text" to "View map",
+                                "postbackData" to "postback_data_1234",
+                                "fallbackUrl" to "https://www.google.com/maps/place/Vonage/@51.5230371,-0.0852492,15z",
+                                "viewLocationAction" to mapOf(
+                                    "latLong" to mapOf(
+                                        "latitude" to 51.5230371,
+                                        "longitude" to -0.0852492
+                                    ),
+                                    "label" to "Vonage London Office"
+                                )
+                            )
+                        )
+                    )
+                )
+            ))
         }
     )
 }

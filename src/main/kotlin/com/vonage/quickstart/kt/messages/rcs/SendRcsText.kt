@@ -30,8 +30,11 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(rcsText {
-        to(TO_NUMBER); from(RCS_SENDER_ID)
-        text("This is an RCS text message sent using the Messages API")
-    })
+    val messageId = client.messages.send(
+        rcsText {
+            to(TO_NUMBER)
+            from(RCS_SENDER_ID)
+            text("This is an RCS text message sent using the Messages API")
+        }
+    )
 }

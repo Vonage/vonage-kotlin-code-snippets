@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.messages.whatsapp
+package com.vonage.quickstart.kt.messages.rcs
 
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
@@ -31,10 +31,28 @@ fun main() {
     }
 
     val messageId = client.messages.send(
-        whatsappText {
+        rcsCustom {
             to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
-            text("This is a WhatsApp text message sent using the Messages API")
+            from(RCS_SENDER_ID)
+            custom(mapOf(
+                "contentMessage" to mapOf(
+                    "text" to "What do you think of Vonage APIs?",
+                    "suggestions" to listOf(
+                        mapOf(
+                            "reply" to mapOf(
+                                "text" to "They're great!",
+                                "postbackData" to "suggestion_1"
+                            )
+                        ),
+                        mapOf(
+                            "reply" to mapOf(
+                                "text" to "They're awesome!",
+                                "postbackData" to "suggestion_2"
+                            )
+                        )
+                    )
+                )
+            ))
         }
     )
 }

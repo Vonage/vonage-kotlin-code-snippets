@@ -30,8 +30,11 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(viberText {
-        to(TO_NUMBER); from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
-        text("This is a Viber text message sent using the Messages API")
-    })
+    val messageId = client.messages.send(
+        viberText {
+            to(TO_NUMBER)
+            from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
+            text("This is a Viber text message sent using the Messages API")
+        }
+    )
 }

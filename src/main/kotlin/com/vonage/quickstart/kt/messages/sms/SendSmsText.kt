@@ -30,8 +30,11 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(smsText {
-        to(TO_NUMBER); from(VONAGE_BRAND_NAME)
-        text("This is an SMS text message sent using the Messages API")
-    })
+    val messageId = client.messages.send(
+        smsText {
+            to(TO_NUMBER)
+            from(VONAGE_BRAND_NAME)
+            text("This is an SMS text message sent using the Messages API")
+        }
+    )
 }

@@ -30,8 +30,11 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(messengerText {
-        to(FB_RECIPIENT_ID); from(VONAGE_FB_SENDER_ID)
-        text("This is a Facebook Messenger text message sent using the Messages API")
-    })
+    val messageId = client.messages.send(
+        messengerText {
+            to(FB_RECIPIENT_ID)
+            from(VONAGE_FB_SENDER_ID)
+            text("This is a Facebook Messenger text message sent using the Messages API")
+        }
+    )
 }
