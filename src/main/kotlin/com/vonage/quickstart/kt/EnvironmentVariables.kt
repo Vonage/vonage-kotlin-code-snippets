@@ -47,6 +47,7 @@ internal val AUDIO_URL = envVar("AUDIO_URL")
 internal val AUDIO_CAPTION = envVar("AUDIO_CAPTION")
 internal val VIDEO_URL = envVar("VIDEO_URL")
 internal val VIDEO_CAPTION = envVar("VIDEO_CAPTION")
+internal val THUMB_URL = envVar("THUMB_URL")
 internal val FILE_URL = envVar("FILE_URL")
 internal val FILE_CAPTION = envVar("FILE_CAPTION")
 internal val STICKER_URL = envVar("STICKER_URL")
@@ -58,6 +59,8 @@ internal val WHATSAPP_TEMPLATE_NAMESPACE = envVar("WHATSAPP_TEMPLATE_NAMESPACE")
 internal val WHATSAPP_TEMPLATE_NAME = envVar("WHATSAPP_TEMPLATE_NAME")
 internal val WHATSAPP_AUTH_TEMPLATE_NAME = envVar("WHATSAPP_AUTH_TEMPLATE_NAME")
 internal val WHATSAPP_TEMPLATE_REPLACEMENT_TEXT = envVar("WHATSAPP_TEMPLATE_REPLACEMENT_TEXT")
-
+internal val FILE_SIZE = envVar("FILE_SIZE").toInt()
+internal val DURATION = envVar("DURATION").toInt()
+internal val TTL = envVar("TTL").toInt()
 
 
