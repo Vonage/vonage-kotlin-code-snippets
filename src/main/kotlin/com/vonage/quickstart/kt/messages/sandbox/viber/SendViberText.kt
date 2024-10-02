@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.messages.viber
+package com.vonage.quickstart.kt.messages.sandbox.viber
 
 import com.vonage.client.kt.*
 import com.vonage.client.messages.viber.Category
@@ -31,10 +31,13 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(viberVideo {
-        to(TO_NUMBER); from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
-        url(VIDEO_URL); thumbUrl(THUMB_URL)
-        category(Category.TRANSACTION); ttl(TTL)
-        fileSize(FILE_SIZE); duration(VIDEO_DURATION)
-    })
+    println(client.messages.send(
+        viberText {
+            to(MESSAGES_SANDBOX_ALLOW_LISTED_TO_NUMBER)
+            from(MESSAGES_SANDBOX_VIBER_SERVICE_ID)
+            text("Don't miss out on our latest offers!")
+            category(Category.PROMOTION)
+        },
+        sandbox = true
+    ))
 }

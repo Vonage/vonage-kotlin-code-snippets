@@ -26,7 +26,8 @@ Most APIs will require you to [create an application](https://dashboard.nexmo.co
 3. Run `gradlew assemble` to build the project. 
    1. To work with a local copy of the SDK or any of its dependencies, run `mvn install` from the respective repo.
    2. To work with a different / specific version of the SDK or any dependencies, edit the `build.gradle.kts` file.
-4. Copy `.env-example` to `.env` and edit the values.
+4. Copy `.env-example` to `.env` and edit the values. Alternatively, edit the 
+[EnvironmentVariables.kt](src/main/kotlin/com/vonage/quickstart/kt/EnvironmentVariables.kt) file.
 5. Use your IDE to run the examples you are interested in.
 You will need to point the run configuration to use the `.env` file as an environment variable.
 
