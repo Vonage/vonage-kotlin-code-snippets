@@ -30,8 +30,12 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(mmsVcard {
-        to(TO_NUMBER); from(VONAGE_FROM_NUMBER)
-        url(VCARD_URL); caption(VCARD_CAPTION)
-    })
+    val messageId = client.messages.send(
+        mmsVcard {
+            to(TO_NUMBER)
+            from(VONAGE_FROM_NUMBER)
+            url(VCARD_URL)
+            caption(VCARD_CAPTION)
+        }
+    )
 }

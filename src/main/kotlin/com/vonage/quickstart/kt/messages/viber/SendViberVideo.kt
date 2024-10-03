@@ -31,10 +31,16 @@ fun main() {
         privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(viberVideo {
-        to(TO_NUMBER); from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
-        url(VIDEO_URL); thumbUrl(THUMB_URL)
-        category(Category.TRANSACTION); ttl(TTL)
-        fileSize(FILE_SIZE); duration(VIDEO_DURATION)
-    })
+    val messageId = client.messages.send(
+        viberVideo {
+            to(TO_NUMBER)
+            from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
+            url(VIDEO_URL)
+            thumbUrl(THUMB_URL)
+            category(Category.TRANSACTION)
+            ttl(TTL)
+            fileSize(FILE_SIZE)
+            duration(VIDEO_DURATION)
+        }
+    )
 }
