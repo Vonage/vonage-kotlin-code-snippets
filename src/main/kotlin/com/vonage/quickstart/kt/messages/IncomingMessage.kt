@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt
+package com.vonage.quickstart.kt.messages
 
 import com.vonage.client.messages.InboundMessage
 import io.ktor.server.application.call
