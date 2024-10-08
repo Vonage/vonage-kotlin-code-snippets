@@ -34,7 +34,7 @@ fun main() {
     embeddedServer(Netty, port = 8000) {
         routing {
             post ("/webhooks/inbound-message") {
-                val messageDetails = call.receive<InboundMessage>()
+                val messageDetails = InboundMessage.fromJson(call.receive<String>())
                 println("Message ID "+messageDetails.getMessageUuid()+" of type " +
                         messageDetails.getMessageType()+" was sent from " +
                         messageDetails.getFrom()+" to "+messageDetails.getTo()+" via "+

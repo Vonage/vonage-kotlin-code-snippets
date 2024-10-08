@@ -45,7 +45,7 @@ fun main() {
                         println("messageTimestamp: ${call.request.queryParameters["messageTimestamp"]}")
                     }
                     else {
-                        val messageEvent = call.receive<MessageEvent>()
+                        val messageEvent = MessageEvent.fromJson(call.receive<String>())
                         println(messageEvent.toJson())
                     }
                     call.respond(204)
