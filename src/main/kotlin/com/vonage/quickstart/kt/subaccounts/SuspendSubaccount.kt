@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.users
+package com.vonage.quickstart.kt.subaccounts
 
 import com.vonage.client.kt.Vonage
 import com.vonage.quickstart.kt.*
@@ -30,8 +30,5 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val user = client.users.user(USER_ID).update {
-        name(USER_NEW_NAME)
-        displayName(USER_NEW_DISPLAY_NAME)
-    }
+    val subaccount = client.subaccounts.subaccount(SUBACCOUNT_KEY).suspended(true)
 }
