@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.initialize
+package com.vonage.quickstart.kt.users
 
 import com.vonage.client.kt.Vonage
 import com.vonage.quickstart.kt.*
@@ -28,7 +28,10 @@ fun main() {
     val client = Vonage {
         apiKey(VONAGE_API_KEY)
         apiSecret(VONAGE_API_SECRET)
-        applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+    }
+
+    val user = client.users.user(USER_ID).update {
+        name(USER_NAME)
+        displayName(USER_DISPLAY_NAME)
     }
 }

@@ -19,16 +19,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.initialize
+package com.vonage.quickstart.kt.users
 
 import com.vonage.client.kt.Vonage
+import com.vonage.client.users.channels.*
 import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
         apiKey(VONAGE_API_KEY)
         apiSecret(VONAGE_API_SECRET)
-        applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+    }
+
+    val user = client.users.create {
+        name(USER_NAME)
+        displayName(USER_DISPLAY_NAME)
+        imageUrl(IMAGE_URL)
+        channels(
+            Pstn(PSTN),
+            Sms(TO_NUMBER),
+            Viber(TO_NUMBER),
+            Whatsapp(TO_NUMBER),
+            Viber(TO_NUMBER),
+            Messenger(FB_RECIPIENT_ID),
+            Vbc(VBC_EXTENSION),
+            Sip(SIP_SECURE_URI, SIP_USERNAME, SIP_PASSWORD),
+            Websocket(WEBSOCKET_URI)
+        )
     }
 }
