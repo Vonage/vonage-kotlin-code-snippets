@@ -25,12 +25,14 @@ import com.vonage.client.numbers.Feature
 import com.vonage.client.numbers.SearchPattern
 import com.vonage.client.numbers.Type
 import com.vonage.client.numbers.UpdateNumberRequest
+import com.vonage.client.verify.VerifyRequest
 
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
 
 val VONAGE_API_KEY = envVar("VONAGE_API_KEY")
 val VONAGE_API_SECRET = envVar("VONAGE_API_SECRET")
+val VONAGE_SIGNATURE_SECRET = envVar("VONAGE_SIGNATURE_SECRET")
 val VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID")
 val VONAGE_APPLICATION_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH")
 
@@ -108,3 +110,9 @@ val NUMBER_SEARCH_CRITERIA = envVar("NUMBER_SEARCH_CRITERIA")
 val NUMBER_SEARCH_PATTERN = SearchPattern.entries[envVar("NUMBER_SEARCH_PATTERN").toInt()]
 val INSIGHT_NUMBER = envVar("INSIGHT_NUMBER")
 val INSIGHT_CALLBACK_URL = envVar("INSIGHT_CALLBACK_URL")
+val REQUEST_ID = envVar("REQUEST_ID")
+val CODE = envVar("CODE")
+val RECIPIENT_NUMBER = envVar("RECIPIENT_NUMBER")
+val BRAND_NAME = envVar("BRAND_NAME")
+val PAYEE_NAME = envVar("PAYEE_NAME")
+val WORKFLOW_ID = VerifyRequest.Workflow.entries[(envVar("WORKFLOW_ID").toInt()) - 1]
