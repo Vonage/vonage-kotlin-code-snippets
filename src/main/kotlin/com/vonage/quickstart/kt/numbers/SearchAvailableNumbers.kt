@@ -36,7 +36,7 @@ fun main() {
         features(*VONAGE_NUMBER_FEATURES)
         pattern(NUMBER_SEARCH_PATTERN, NUMBER_SEARCH_CRITERIA)
     }
-    for (number in numbers) {
+    for (number in numbers.numbers) {
         println("""
             Tel: ${number.msisdn}
             Country: ${number.country}

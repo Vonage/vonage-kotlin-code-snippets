@@ -26,8 +26,8 @@ import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
-        apiKey(VONAGE_API_KEY)
-        apiSecret(VONAGE_API_SECRET)
+        applicationId(VONAGE_APPLICATION_ID)
+        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
     if (client.verify.request(REQUEST_ID).isValidVerificationCode(CODE)) {
