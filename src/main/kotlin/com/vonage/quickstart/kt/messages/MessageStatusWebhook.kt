@@ -34,7 +34,7 @@ fun main() {
     embeddedServer(Netty, port = 8000) {
         routing {
             post ("/webhooks/message-status") {
-                val messageDetails = MessageStatus.fromJson(call.receive<String>())
+                val messageDetails = MessageStatus.fromJson(call.receive())
                 println(
                     "Message ID ${messageDetails.getMessageUuid()}" +
                     "(status ${messageDetails.getStatus()}) was sent at" +

@@ -19,28 +19,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.messages
+package com.vonage.quickstart.kt.insight
 
-import com.vonage.client.messages.InboundMessage
+import com.vonage.client.insight.AdvancedInsightResponse
 import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.request.receive
-import io.ktor.server.response.respondText
+import io.ktor.server.response.respond
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
 
 fun main() {
     embeddedServer(Netty, port = 8000) {
         routing {
-            post ("/webhooks/inbound-message") {
-                val messageDetails = InboundMessage.fromJson(call.receive())
-                println("Message ID "+messageDetails.getMessageUuid()+" of type " +
-                        messageDetails.getMessageType()+" was sent from " +
-                        messageDetails.getFrom()+" to "+messageDetails.getTo()+" via "+
-                        messageDetails.getChannel()+" at "+messageDetails.getTimestamp()
-                )
-                call.respondText("OK")
+            post ("/webhooks/insight") {
+                val insightDetails = AdvancedInsightResponse.fromJson(call.receive())
+                println(insightDetails)
+                call.respond(204)
             }
         }
     }.start(wait = true)
