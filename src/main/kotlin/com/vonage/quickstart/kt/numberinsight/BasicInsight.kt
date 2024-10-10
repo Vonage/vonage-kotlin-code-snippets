@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.insight
+package com.vonage.quickstart.kt.numberinsight
 
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
@@ -30,5 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.numberInsight.advanced(INSIGHT_NUMBER, INSIGHT_CALLBACK_URL)
+    val response = client.numberInsight.basic(INSIGHT_NUMBER)
+    println(response)
 }

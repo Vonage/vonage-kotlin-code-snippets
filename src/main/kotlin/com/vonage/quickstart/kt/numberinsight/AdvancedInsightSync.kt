@@ -19,25 +19,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.insight
+package com.vonage.quickstart.kt.numberinsight
 
-import com.vonage.client.insight.AdvancedInsightResponse
-import io.ktor.server.application.call
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import io.ktor.server.request.receive
-import io.ktor.server.response.respond
-import io.ktor.server.routing.post
-import io.ktor.server.routing.routing
+import com.vonage.client.kt.*
+import com.vonage.quickstart.kt.*
 
 fun main() {
-    embeddedServer(Netty, port = 8000) {
-        routing {
-            post ("/webhooks/insight") {
-                val insightDetails = AdvancedInsightResponse.fromJson(call.receive())
-                println(insightDetails)
-                call.respond(204)
-            }
-        }
-    }.start(wait = true)
+    val client = Vonage {
+        apiKey(VONAGE_API_KEY)
+        apiSecret(VONAGE_API_SECRET)
+    }
+
+    val response = client.numberInsight.advanced(INSIGHT_NUMBER, INSIGHT_CALLBACK_URL)
+    println(response)
 }
