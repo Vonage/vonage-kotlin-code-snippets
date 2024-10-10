@@ -21,6 +21,11 @@
  */
 package com.vonage.quickstart.kt
 
+import com.vonage.client.numbers.Feature
+import com.vonage.client.numbers.SearchPattern
+import com.vonage.client.numbers.Type
+import com.vonage.client.numbers.UpdateNumberRequest
+
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
 
@@ -29,6 +34,7 @@ val VONAGE_API_SECRET = envVar("VONAGE_API_SECRET")
 val VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID")
 val VONAGE_APPLICATION_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH")
 
+val VONAGE_NUMBER = envVar("VONAGE_NUMBER")
 val TO_NUMBER = envVar("TO_NUMBER")
 val VONAGE_FROM_NUMBER = envVar("VONAGE_FROM_NUMBER")
 val VONAGE_BRAND_NAME = envVar("VONAGE_BRAND_NAME")
@@ -89,6 +95,14 @@ val NEW_SUBACCOUNT_NAME = envVar("NEW_SUBACCOUNT_NAME")
 val NEW_SUBACCOUNT_SECRET = envVar("NEW_SUBACCOUNT_SECRET")
 val AMOUNT = envVar("AMOUNT").toDouble()
 val COUNTRY_CODE = envVar("COUNTRY_CODE")
+val VONAGE_NUMBER_TYPE = Type.fromString(envVar("VONAGE_NUMBER_TYPE"))
+val VONAGE_NUMBER_FEATURES = envVar("VONAGE_NUMBER_FEATURES").split(",")
+    .map { Feature.fromString(it) }.toTypedArray()
 val SMS_CALLBACK_URL = envVar("SMS_CALLBACK_URL")
+val VOICE_CALLBACK_TYPE = UpdateNumberRequest.CallbackType.fromString(envVar("VOICE_CALLBACK_TYPE"))
+val VOICE_CALLBACK_VALUE = envVar("VOICE_CALLBACK_VALUE")
+val VOICE_STATUS_URL = envVar("VOICE_STATUS_URL")
 val SECRET_ID = envVar("SECRET_ID")
 val NEW_SECRET = envVar("NEW_SECRET")
+val NUMBER_SEARCH_CRITERIA = envVar("NUMBER_SEARCH_CRITERIA")
+val NUMBER_SEARCH_PATTERN = SearchPattern.entries[envVar("NUMBER_SEARCH_PATTERN").toInt()]
