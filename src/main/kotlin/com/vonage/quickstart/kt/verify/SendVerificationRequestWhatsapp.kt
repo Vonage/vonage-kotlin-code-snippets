@@ -32,7 +32,7 @@ fun main() {
     }
 
     val response = client.verify.sendVerification(BRAND_NAME) {
-        addWorkflow(WhatsappWorkflow(TO_NUMBER, VONAGE_WHATSAPP_NUMBER))
+        addWorkflow(WhatsappWorkflow(TO_NUMBER, WHATSAPP_BUSINESS_NUMBER))
     }
     println("Verification sent: ${response.requestId}")
 }
