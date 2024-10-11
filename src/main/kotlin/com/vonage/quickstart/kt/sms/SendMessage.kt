@@ -43,7 +43,3 @@ fun main() {
             "Message failed with error: ${response[0].errorText}"
     )
 }
-
-// TODO: Remove this once 1.0.0 is released
-fun List<com.vonage.client.sms.SmsSubmissionResponseMessage>.wasSuccessfullySent(): Boolean =
-    isNotEmpty() && all { it.status == com.vonage.client.sms.MessageStatus.OK }

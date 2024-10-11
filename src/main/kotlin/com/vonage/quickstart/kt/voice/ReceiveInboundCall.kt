@@ -19,26 +19,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.numbers
+package com.vonage.quickstart.kt.voice
 
-import com.vonage.client.kt.Vonage
-import com.vonage.quickstart.kt.*
+import com.vonage.client.kt.talkAction
+import io.ktor.server.application.call
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.response.header
+import io.ktor.server.response.respond
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
 
 fun main() {
-    val client = Vonage {
-        apiKey(VONAGE_API_KEY)
-        apiSecret(VONAGE_API_SECRET)
-    }
-
-    val numbers = client.numbers.listOwned {
-        pattern(NUMBER_SEARCH_PATTERN, NUMBER_SEARCH_CRITERIA)
-    }
-    for (number in numbers) {
-        println("""
-            Tel: ${number.msisdn}
-            Country: ${number.country}
-            Type: ${number.type}
-            """.trimIndent()
-        )
-    }
+    embeddedServer(Netty, port = 8000) {
+        routing {
+            get("/webhooks/answer") {
+                val from = call.request.queryParameters["from"]?.replace("", "")
+                val action = talkAction("Thank you for calling from $from")
+                call.response.header("Content-Type", "application/json")
+                call.respond(action.toJson())
+            }
+        }
+    }.start(wait = true)
 }

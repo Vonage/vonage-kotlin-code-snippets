@@ -19,26 +19,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.numbers
+package com.vonage.quickstart.kt.voice
 
-import com.vonage.client.kt.Vonage
+import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
-        apiKey(VONAGE_API_KEY)
-        apiSecret(VONAGE_API_SECRET)
+        applicationId(VONAGE_APPLICATION_ID)
+        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
     }
 
-    val numbers = client.numbers.listOwned {
-        pattern(NUMBER_SEARCH_PATTERN, NUMBER_SEARCH_CRITERIA)
-    }
-    for (number in numbers) {
-        println("""
-            Tel: ${number.msisdn}
-            Country: ${number.country}
-            Type: ${number.type}
-            """.trimIndent()
-        )
-    }
+    val call = client.voice.call(CALL_UUID)
+    var streamInfo = call.streamAudio(AUDIO_URL)
+    Thread.sleep(5000)
+    streamInfo = call.stopStream()
 }

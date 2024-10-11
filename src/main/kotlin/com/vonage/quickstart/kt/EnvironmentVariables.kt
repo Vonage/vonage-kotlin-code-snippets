@@ -26,6 +26,7 @@ import com.vonage.client.numbers.SearchPattern
 import com.vonage.client.numbers.Type
 import com.vonage.client.numbers.UpdateNumberRequest
 import com.vonage.client.verify.VerifyRequest
+import com.vonage.client.voice.TextToSpeechLanguage
 
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
@@ -119,3 +120,12 @@ val BRAND_NAME = envVar("BRAND_NAME")
 val PAYEE_NAME = envVar("PAYEE_NAME")
 val WORKFLOW_ID = VerifyRequest.Workflow.entries[(envVar("WORKFLOW_ID").toInt()) - 1]
 val TO_EMAIL = envVar("TO_EMAIL")
+
+val ANSWER_URL = envVar("ANSWER_URL")
+val YOUR_SECOND_NUMBER = envVar("YOUR_SECOND_NUMBER")
+val CALL_UUID = envVar("CALL_UUID")
+val DIGITS = envVar("DIGITS")
+val TEXT = envVar("TEXT")
+val CONF_NAME = envVar("CONF_NAME")
+val NCCO_URL = envVar("NCCO_URL")
+val RECORDING_URL = envVar("RECORDING_URL")
