@@ -22,6 +22,7 @@
 package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.talkAction
+import com.vonage.client.voice.ncco.Ncco
 import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
@@ -35,9 +36,12 @@ fun main() {
         routing {
             get("/webhooks/answer") {
                 val from = call.request.queryParameters["from"]?.replace("", "")
-                val action = talkAction("Thank you for calling from $from")
                 call.response.header("Content-Type", "application/json")
-                call.respond(action.toJson())
+                call.respond(
+                    Ncco(
+                        talkAction("Thank you for calling from $from")
+                    ).toJson()
+                )
             }
         }
     }.start(wait = true)
