@@ -21,9 +21,7 @@
  */
 package com.vonage.quickstart.kt.voice
 
-import com.vonage.client.kt.Vonage
-import com.vonage.client.kt.talkAction
-import com.vonage.client.kt.toPstn
+import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
 
 fun main() {

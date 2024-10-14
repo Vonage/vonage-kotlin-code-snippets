@@ -22,16 +22,7 @@
 package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.Vonage
-import com.vonage.client.kt.connectToPstn
-import com.vonage.client.voice.ncco.Ncco
 import com.vonage.quickstart.kt.*
-import io.ktor.server.application.call
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import io.ktor.server.response.header
-import io.ktor.server.response.respond
-import io.ktor.server.routing.route
-import io.ktor.server.routing.routing
 import java.nio.file.Paths
 
 fun main() {

@@ -23,8 +23,7 @@ package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
-import java.time.Duration
-import java.time.Instant
+import java.time.*
 
 fun main() {
     val client = Vonage {
