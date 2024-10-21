@@ -22,7 +22,6 @@
 package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.inputAction
-import com.vonage.client.kt.type
 import com.vonage.client.kt.speech
 import com.vonage.client.kt.talkAction
 import com.vonage.client.voice.EventWebhook
@@ -49,7 +48,6 @@ fun main() {
                         talkAction("Please say something."),
                         inputAction {
                             eventUrl(call.request.path().replace("answer", "asr"))
-                            type(speech = true)
                             speech {
                                 language(SpeechSettings.Language.ENGLISH_UNITED_STATES)
                             }

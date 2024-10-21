@@ -22,7 +22,6 @@
 package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.inputAction
-import com.vonage.client.kt.type
 import com.vonage.client.kt.dtmf
 import com.vonage.client.kt.talkAction
 import com.vonage.client.voice.EventWebhook
@@ -48,7 +47,6 @@ fun main() {
                         talkAction("Hello. Please press any key to continue."),
                         inputAction {
                             eventUrl(call.request.path().replace("answer", "dtmf"))
-                            type(dtmf = true)
                             dtmf {
                                 maxDigits(1)
                             }
