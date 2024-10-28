@@ -22,6 +22,7 @@
 package com.vonage.quickstart.kt.verify
 
 import com.vonage.client.kt.Vonage
+import com.vonage.client.kt.silentAuth
 import com.vonage.client.verify2.*
 import com.vonage.quickstart.kt.*
 
@@ -32,7 +33,7 @@ fun main() {
     }
 
     val response = client.verify.sendVerification(BRAND_NAME) {
-        addWorkflow(SilentAuthWorkflow(TO_NUMBER))
+        silentAuth(TO_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }

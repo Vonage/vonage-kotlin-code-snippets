@@ -22,7 +22,7 @@
 package com.vonage.quickstart.kt.verify
 
 import com.vonage.client.kt.Vonage
-import com.vonage.client.verify2.*
+import com.vonage.client.kt.voice
 import com.vonage.quickstart.kt.*
 
 fun main() {
@@ -32,7 +32,7 @@ fun main() {
     }
 
     val response = client.verify.sendVerification(BRAND_NAME) {
-        addWorkflow(VoiceWorkflow(TO_NUMBER))
+        voice(TO_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }
