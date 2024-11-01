@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.vonage:server-sdk-kotlin:1.0.0")
+    implementation("com.vonage:server-sdk-kotlin:1.1.0")
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-serialization-jackson")
 }

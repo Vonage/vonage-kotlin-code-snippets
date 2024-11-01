@@ -120,6 +120,9 @@ val BRAND_NAME = envVar("BRAND_NAME")
 val PAYEE_NAME = envVar("PAYEE_NAME")
 val WORKFLOW_ID = VerifyRequest.Workflow.entries[(envVar("WORKFLOW_ID").toInt()) - 1]
 val TO_EMAIL = envVar("TO_EMAIL")
+val TEMPLATE_ID = envVar("TEMPLATE_ID")
+val TEMPLATE_FRAGMENT_ID = envVar("TEMPLATE_FRAGMENT_ID")
+
 
 val ANSWER_URL = envVar("ANSWER_URL")
 val YOUR_SECOND_NUMBER = envVar("YOUR_SECOND_NUMBER")
