@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.0.20"
-    id("io.ktor.plugin") version "2.3.12"
+    kotlin("jvm") version "2.0.21"
+    id("io.ktor.plugin") version "3.0.1"
 }
 
 repositories {
@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.vonage:server-sdk-kotlin:1.1.0")
+    implementation("com.vonage:server-sdk-kotlin:1.+")
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-serialization-jackson")
 }
