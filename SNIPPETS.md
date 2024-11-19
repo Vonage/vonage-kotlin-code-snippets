@@ -1665,7 +1665,6 @@ val response = client.verify.sendVerification(BRAND_NAME) {
 println("Verification sent: ${response.requestId}")
 ```
 
-## Environment Variables
 ## Redact
 ### Redact Insight
 ```kotlin
@@ -1722,7 +1721,7 @@ Thread.sleep(3000)
 call.unearmuff()
 ```
 
-### Handle User Input Asr
+### Handle User Input ASR
 ```kotlin
 embeddedServer(Netty, port = 8000) {
     routing {
@@ -1753,7 +1752,7 @@ embeddedServer(Netty, port = 8000) {
 }.start(wait = true)
 ```
 
-### Transfer Call With Ncco
+### Transfer Call With NCCO
 ```kotlin
 client.voice.call(CALL_UUID).transfer(
     talkAction("This is a transfer action using an inline NCCO.")
@@ -1794,7 +1793,7 @@ val destination = Paths.get("/Users/me123/Downloads")
 client.voice.downloadRecording(RECORDING_URL, destination)
 ```
 
-### Outbound Text To Speech Call With Ncco
+### Outbound Text To Speech Call With NCCO
 ```kotlin
 val callEvent = client.voice.createCall {
     toPstn(TO_NUMBER)
@@ -1859,7 +1858,7 @@ val response = client.voice.call(CALL_UUID).startTalk(TEXT) {
 }
 ```
 
-### Track Ncco Progress
+### Track NCCO Progress
 ```kotlin
 embeddedServer(Netty, port = 8000) {
     routing {
@@ -1990,7 +1989,7 @@ embeddedServer(Netty, port = 8000) {
 }.start(wait = true)
 ```
 
-### Play Dtmf Into Call
+### Play DTMF Into Call
 ```kotlin
 val response = client.voice.call(CALL_UUID).sendDtmf(DIGITS)
 ```
@@ -2023,7 +2022,7 @@ embeddedServer(Netty, port = 8000) {
 }.start(wait = true)
 ```
 
-### Handle User Input Dtmf
+### Handle User Input DTMF
 ```kotlin
 embeddedServer(Netty, port = 8000) {
     routing {

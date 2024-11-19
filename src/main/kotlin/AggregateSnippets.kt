@@ -24,6 +24,8 @@ fun main() {
 fun File.isInitialize(): Boolean = name.endsWith("initialize")
 
 fun File.appendSnippetContent(contentBuilder: StringBuilder, level: Int = 2) {
+    if (name == "EnvironmentVariables.kt") return
+
     contentBuilder.append("#".repeat(level)).append(' ').appendLine(
         nameWithoutExtension
             .replaceFirstChar { it.uppercase() }
@@ -35,6 +37,10 @@ fun File.appendSnippetContent(contentBuilder: StringBuilder, level: Int = 2) {
             .replace("mms", "MMS", true)
             .replace("psd2", "PSD2", true)
             .replace("dtmf", "DTMF", true)
+            .replace("asr", "ASR", true)
+            .replace("tts", "TTS", true)
+            .replace("ncco", "NCCO", true)
+            .replace("rtc", "RTC", true)
             .replace("whatsapp", "WhatsApp", true)
     )
 
