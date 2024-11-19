@@ -2,6 +2,7 @@
 
 Kotlin code samples for [Vonage APIs](https://developer.vonage.com/en/api) using
 the [Kotlin Server SDK](https://github.com/Vonage/vonage-kotlin-sdk).
+These are used in the [Vonage developer portal](https://developer.vonage.com/en/documentation).
 
 Quickstarts also available for:
 - [cURL](https://github.com/Vonage/vonage-curl-code-snippets)
@@ -30,3 +31,6 @@ Most APIs will require you to [create an application](https://dashboard.nexmo.co
 5. Use your IDE to run the examples you are interested in.
 You will need to point the run configuration to use the `.env` file as an environment variable.
 
+## Searchable Examples
+See [SNIPPETS.md](SNIPPETS.md) for an aggregated list of all the code in this repository. You can then
+Ctrl+F search this file to find what you're looking for. 

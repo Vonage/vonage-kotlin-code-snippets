@@ -34,6 +34,7 @@ fun File.appendSnippetContent(contentBuilder: StringBuilder, level: Int = 2) {
             .replace("rcs", "RCS", true)
             .replace("mms", "MMS", true)
             .replace("psd2", "PSD2", true)
+            .replace("dtmf", "DTMF", true)
             .replace("whatsapp", "WhatsApp", true)
     )
 
