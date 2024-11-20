@@ -1,5 +1,9 @@
 # Vonage Quickstart Examples for Kotlin
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Community Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://developer.vonage.com/community/slack)
+
 Kotlin code samples for [Vonage APIs](https://developer.vonage.com/en/api) using
 the [Kotlin Server SDK](https://github.com/Vonage/vonage-kotlin-sdk).
 These are used in the [Vonage developer portal](https://developer.vonage.com/en/documentation).
