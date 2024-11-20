@@ -26,7 +26,6 @@ import com.vonage.client.numbers.SearchPattern
 import com.vonage.client.numbers.Type
 import com.vonage.client.numbers.UpdateNumberRequest
 import com.vonage.client.verify.VerifyRequest
-import com.vonage.client.voice.TextToSpeechLanguage
 
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
