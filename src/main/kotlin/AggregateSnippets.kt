@@ -26,23 +26,8 @@ fun File.isInitialize(): Boolean = name.endsWith("initialize")
 fun File.appendSnippetContent(contentBuilder: StringBuilder, level: Int = 2) {
     if (name == "EnvironmentVariables.kt") return
 
-    contentBuilder.append("#".repeat(level)).append(' ').appendLine(
-        nameWithoutExtension
-            .replaceFirstChar { it.uppercase() }
-            .replace(Regex("(?<!^)([A-Z])"), " $1")
-            .replace("numberinsight", "Number Insight", true)
-            .replace("jwt", "JWT", true)
-            .replace("sms", "SMS", true)
-            .replace("rcs", "RCS", true)
-            .replace("mms", "MMS", true)
-            .replace("psd2", "PSD2", true)
-            .replace("dtmf", "DTMF", true)
-            .replace("asr", "ASR", true)
-            .replace("tts", "TTS", true)
-            .replace("ncco", "NCCO", true)
-            .replace("rtc", "RTC", true)
-            .replace("whatsapp", "WhatsApp", true)
-    )
+    contentBuilder.append("#".repeat(level)).append(' ')
+        .appendLine(nameWithoutExtension.toHeadingTitle())
 
     if (isDirectory) {
         listFiles()?.forEach { it.appendSnippetContent(contentBuilder, level + 1) }
@@ -56,4 +41,16 @@ fun File.appendSnippetContent(contentBuilder: StringBuilder, level: Int = 2) {
         }
         contentBuilder.appendLine("```kotlin").appendLine(nugget).appendLine("```").appendLine()
     }
+}
+
+fun String.toHeadingTitle(): String {
+    var result = this.replaceFirstChar { it.uppercase() }
+        .replace(Regex("(?<!^)([A-Z])"), " $1")
+        .replace("numberinsight", "Number Insight", true)
+        .replace("whatsapp", "WhatsApp", true)
+
+    for (acronym in arrayOf("jwt", "url", "id", "sms", "rcs", "mms", "psd2", "dtmf", "asr", "tts", "ncco", "rtc")) {
+        result = result.replace(acronym, acronym.uppercase(), true)
+    }
+    return result
 }

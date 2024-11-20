@@ -306,7 +306,7 @@ val messageId = client.messages.send(
 )
 ```
 
-#### Send RCS Suggested Open Url
+#### Send RCS Suggested Open URL
 ```kotlin
 val messageId = client.messages.send(
     rcsCustom {
@@ -1045,7 +1045,7 @@ val messageId = client.messages.send(
 )
 ```
 
-#### Send WhatsApp Sticker Url
+#### Send WhatsApp Sticker URL
 ```kotlin
 val messageId = client.messages.send(
     whatsappSticker {
