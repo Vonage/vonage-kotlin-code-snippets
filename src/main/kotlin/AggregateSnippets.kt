@@ -62,7 +62,7 @@ fun String.toHeadingTitle(): String {
         .replace("whatsapp", "WhatsApp", true)
 
     val acronyms = arrayOf(
-        "jwt", "id", "uuid", "url",
+        "jwt", "id", "uuid", "url", "sim",
         "sms", "rcs", "mms", "psd2", "dlr",
         "dtmf", "asr", "tts", "ncco", "rtc"
     )
