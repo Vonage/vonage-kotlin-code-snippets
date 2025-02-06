@@ -28,7 +28,7 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     println(client.messages.send(
@@ -36,11 +36,11 @@ fun main() {
             to(MESSAGES_SANDBOX_ALLOW_LISTED_TO_NUMBER)
             from(MESSAGES_SANDBOX_VIBER_SERVICE_ID)
             category(Category.PROMOTION)
-            duration(VIDEO_DURATION)
-            fileSize(FILE_SIZE)
-            thumbUrl(THUMB_URL)
-            url(VIDEO_URL)
-            caption(VIDEO_CAPTION)
+            duration(VIBER_VIDEO_DURATION)
+            fileSize(VIBER_VIDEO_FILE_SIZE)
+            thumbUrl(VIBER_THUMB_URL)
+            url(MESSAGES_VIDEO_URL)
+            caption(MESSAGES_CAPTION)
         },
         sandbox = true
     ))

@@ -28,9 +28,9 @@ import java.nio.file.Paths
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val destination = Paths.get("/Users/me123/Downloads")
-    client.voice.downloadRecording(RECORDING_URL, destination)
+    client.voice.downloadRecording(VOICE_RECORDING_URL, destination)
 }

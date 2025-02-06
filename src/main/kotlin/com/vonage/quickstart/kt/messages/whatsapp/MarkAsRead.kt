@@ -28,8 +28,8 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    client.messages.existingMessage(MESSAGE_UUID, ApiRegion.API_US).markAsRead()
+    client.messages.existingMessage(MESSAGES_MESSAGE_ID, ApiRegion.API_US).markAsRead()
 }

@@ -27,13 +27,13 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         messengerText {
-            to(FB_RECIPIENT_ID)
-            from(VONAGE_FB_SENDER_ID)
+            to(MESSENGER_SENDER_ID)
+            from(MESSENGER_RECIPIENT_ID)
             text("This is a Facebook Messenger text message sent using the Messages API")
         }
     )

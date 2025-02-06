@@ -32,7 +32,7 @@ fun main() {
     }
 
     val application = client.application.create {
-        name("Code Snippets V2 Application")
+        name(APPLICATION_NAME)
         messages {
             inbound {
                 address("https://example.com/webhooks/inbound")

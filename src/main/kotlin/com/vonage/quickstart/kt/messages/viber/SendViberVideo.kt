@@ -28,19 +28,19 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         viberVideo {
-            to(TO_NUMBER)
-            from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
-            url(VIDEO_URL)
-            thumbUrl(THUMB_URL)
+            to(MESSAGES_TO_NUMBER)
+            from(VIBER_SENDER_ID)
+            url(MESSAGES_VIDEO_URL)
+            thumbUrl(VIBER_THUMB_URL)
             category(Category.TRANSACTION)
-            ttl(TTL)
-            fileSize(FILE_SIZE)
-            duration(VIDEO_DURATION)
+            ttl(VIBER_VIDEO_TTL)
+            fileSize(VIBER_VIDEO_FILE_SIZE)
+            duration(VIBER_VIDEO_DURATION)
         }
     )
 }

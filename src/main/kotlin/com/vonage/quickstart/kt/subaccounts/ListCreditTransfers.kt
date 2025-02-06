@@ -30,5 +30,5 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val transfers = client.subaccounts.listCreditTransfers()
+    val transfers = client.subaccounts.listCreditTransfers(startDate = SUBACCOUNT_START_DATE)
 }

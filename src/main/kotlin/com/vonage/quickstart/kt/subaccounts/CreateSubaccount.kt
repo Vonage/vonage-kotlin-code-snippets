@@ -31,7 +31,7 @@ fun main() {
     }
 
     val subaccount = client.subaccounts.createSubaccount(
-        name = NEW_SUBACCOUNT_NAME,
-        secret = NEW_SUBACCOUNT_SECRET
+        name = SUBACCOUNT_NAME,
+        secret = SUBACCOUNT_SECRET
     )
 }

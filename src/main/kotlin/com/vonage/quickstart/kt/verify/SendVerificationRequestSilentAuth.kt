@@ -23,17 +23,16 @@ package com.vonage.quickstart.kt.verify
 
 import com.vonage.client.kt.Vonage
 import com.vonage.client.kt.silentAuth
-import com.vonage.client.verify2.*
 import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val response = client.verify.sendVerification(BRAND_NAME) {
-        silentAuth(TO_NUMBER)
+    val response = client.verify.sendVerification(VERIFY_BRAND_NAME) {
+        silentAuth(VERIFY_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }

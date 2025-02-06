@@ -25,9 +25,8 @@ import com.vonage.client.kt.connectToPstn
 import com.vonage.client.kt.recordAction
 import com.vonage.client.voice.EventWebhook
 import com.vonage.client.voice.ncco.Ncco
-import com.vonage.quickstart.kt.TO_NUMBER
-import com.vonage.quickstart.kt.VONAGE_NUMBER
-import io.ktor.server.application.call
+import com.vonage.quickstart.kt.VOICE_TO_NUMBER
+import com.vonage.quickstart.kt.VONAGE_VIRTUAL_NUMBER
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.request.path
@@ -48,8 +47,8 @@ fun main() {
                         recordAction {
                             eventUrl(call.request.path().replace("answer", "recordings"))
                         },
-                        connectToPstn(TO_NUMBER) {
-                            from(VONAGE_NUMBER)
+                        connectToPstn(VOICE_TO_NUMBER) {
+                            from(VONAGE_VIRTUAL_NUMBER)
                         }
                     ).toJson()
                 )

@@ -27,14 +27,14 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         whatsappAudio {
-            to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
-            url(AUDIO_URL)
+            to(MESSAGES_TO_NUMBER)
+            from(WHATSAPP_SENDER_ID)
+            url(MESSAGES_AUDIO_URL)
         }
     )
 }

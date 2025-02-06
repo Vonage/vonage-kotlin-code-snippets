@@ -33,6 +33,6 @@ fun main() {
     val receipt = client.subaccounts.transferBalance(
         from = VONAGE_API_KEY,
         to = SUBACCOUNT_KEY,
-        amount = AMOUNT
+        amount = SUBACCOUNT_BALANCE_AMOUNT
     )
 }

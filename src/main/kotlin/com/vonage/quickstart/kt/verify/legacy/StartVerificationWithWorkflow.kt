@@ -31,8 +31,8 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verifyLegacy.verify(RECIPIENT_NUMBER, BRAND_NAME) {
-        workflow(VerifyRequest.Workflow.SMS_TTS)
+    val response = client.verifyLegacy.verify(VERIFY_NUMBER, VERIFY_BRAND_NAME) {
+        workflow(VERIFY_WORKFLOW_ID)
     }
     if (response.status == VerifyStatus.OK) {
         println("Verification sent. Request ID: ${response.requestId}")

@@ -33,7 +33,7 @@ fun main() {
     val receipt = client.subaccounts.transferNumber(
         from = VONAGE_API_KEY,
         to = SUBACCOUNT_KEY,
-        number = VONAGE_FROM_NUMBER,
-        country = COUNTRY_CODE
+        number = NUMBER_MSISDN,
+        country = NUMBER_COUNTRY_CODE
     )
 }

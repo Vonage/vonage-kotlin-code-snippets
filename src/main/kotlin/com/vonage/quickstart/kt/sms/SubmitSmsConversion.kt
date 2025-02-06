@@ -32,7 +32,7 @@ fun main() {
     }
 
     client.conversion.convertSms(
-        messageId = MESSAGE_UUID,
+        messageId = MESSAGES_MESSAGE_ID,
         delivered = true,
         timestamp = Instant.now()
     )

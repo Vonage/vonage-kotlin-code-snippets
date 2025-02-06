@@ -31,8 +31,8 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verify.sendVerification(BRAND_NAME) {
-        whatsappCodeless(TO_NUMBER, WHATSAPP_BUSINESS_NUMBER)
+    val response = client.verify.sendVerification(VERIFY_BRAND_NAME) {
+        whatsappCodeless(VERIFY_NUMBER, VERIFY_WHATSAPP_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }

@@ -32,8 +32,8 @@ fun main() {
     }
 
     // Outbound
-    client.redact.redactMessage(MESSAGE_UUID)
+    client.redact.redactMessage(VONAGE_REDACT_ID)
 
     // Inbound
-    client.redact.redactMessage(MESSAGE_UUID, RedactRequest.Type.INBOUND)
+    client.redact.redactMessage(VONAGE_REDACT_ID, RedactRequest.Type.INBOUND)
 }

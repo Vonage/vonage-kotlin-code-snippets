@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.pricing.getOutboundVoicePriceForPrefix(DIAL_PREFIX)
+    val response = client.pricing.getOutboundVoicePriceForPrefix(PRICING_DIAL_PREFIX)
     response.forEach { println(it.toJson()) }
 }

@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val secret = client.account.secrets().create(NEW_SECRET)
+    val secret = client.account.secrets().create(ACCOUNT_SECRET)
     println("ID: ${secret.id} created on: ${secret.created}")
 }

@@ -28,20 +28,20 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val user = client.users.create {
         name(USER_NAME)
         displayName(USER_DISPLAY_NAME)
-        imageUrl(IMAGE_URL)
+        imageUrl(MESSAGES_IMAGE_URL)
         channels(
-            Pstn(PSTN),
-            Sms(TO_NUMBER),
-            Viber(TO_NUMBER),
-            Whatsapp(TO_NUMBER),
-            Viber(TO_NUMBER),
-            Messenger(FB_RECIPIENT_ID),
+            Pstn(MESSAGES_TO_NUMBER),
+            Sms(MESSAGES_TO_NUMBER),
+            Viber(MESSAGES_TO_NUMBER),
+            Whatsapp(MESSAGES_TO_NUMBER),
+            Viber(MESSAGES_TO_NUMBER),
+            Messenger(MESSENGER_RECIPIENT_ID),
             Vbc(VBC_EXTENSION),
             Sip(SIP_SECURE_URI, SIP_USERNAME, SIP_PASSWORD),
             Websocket(WEBSOCKET_URI)

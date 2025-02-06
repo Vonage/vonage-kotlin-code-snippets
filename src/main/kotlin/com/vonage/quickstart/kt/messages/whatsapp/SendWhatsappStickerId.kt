@@ -27,14 +27,14 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         whatsappSticker {
-            to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
-            id(STICKER_ID)
+            to(MESSAGES_TO_NUMBER)
+            from(WHATSAPP_SENDER_ID)
+            id(WHATSAPP_STICKER_ID)
         }
     )
 }

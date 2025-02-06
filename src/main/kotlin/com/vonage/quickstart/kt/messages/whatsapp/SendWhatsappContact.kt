@@ -22,19 +22,18 @@
 package com.vonage.quickstart.kt.messages.whatsapp
 
 import com.vonage.client.kt.*
-import com.vonage.client.messages.whatsapp.*
 import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         whatsappCustom {
-            to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
+            to(MESSAGES_TO_NUMBER)
+            from(WHATSAPP_SENDER_ID)
             custom(mapOf(
                 "type" to "contacts",
                 "contacts" to listOf(

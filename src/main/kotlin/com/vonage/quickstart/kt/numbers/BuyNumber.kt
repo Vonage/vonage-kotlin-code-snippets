@@ -30,5 +30,5 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    client.numbers.number(COUNTRY_CODE, VONAGE_NUMBER).buy()
+    client.numbers.number(NUMBER_COUNTRY_CODE, NUMBER_MSISDN).buy()
 }
