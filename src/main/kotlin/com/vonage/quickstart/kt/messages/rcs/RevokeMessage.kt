@@ -31,5 +31,5 @@ fun main() {
         privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    client.messages.existingMessage(MESSAGES_MESSAGE_ID, ApiRegion.API_US).revoke()
+    client.messages.existingMessage(MESSAGES_MESSAGE_ID, MESSAGES_GEOSPECIFIC_API_HOST).revoke()
 }

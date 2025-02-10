@@ -21,6 +21,7 @@
  */
 package com.vonage.quickstart.kt
 
+import com.vonage.client.ApiRegion
 import com.vonage.client.numbers.Feature
 import com.vonage.client.numbers.SearchPattern
 import com.vonage.client.numbers.Type
@@ -33,7 +34,7 @@ import java.time.Instant
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
 
-// General
+// Ath / General
 val VONAGE_API_KEY = envVar("VONAGE_API_KEY")
 val VONAGE_API_SECRET = envVar("VONAGE_API_SECRET")
 val VONAGE_SIGNATURE_SECRET = envVar("VONAGE_SIGNATURE_SECRET")
@@ -51,10 +52,7 @@ val ACCOUNT_SMS_CALLBACK_URL = envVar("ACCOUNT_SMS_CALLBACK_URL")
 val APPLICATION_NAME = envVar("APPLICATION_NAME")
 
 // Messages
-val MESSAGES_API_URL = envVar("MESSAGES_API_URL")
-val MESSAGES_GEOSPECIFIC_API_URL = envVar("MESSAGES_GEOSPECIFIC_API_URL")
-val MESSAGES_GEOSPECIFIC_API_HOST = envVar("MESSAGES_GEOSPECIFIC_API_HOST")
-val MESSAGES_SANDBOX_URL = envVar("MESSAGES_SANDBOX_URL")
+val MESSAGES_GEOSPECIFIC_API_HOST: ApiRegion = ApiRegion.fromString(envVar("MESSAGES_GEOSPECIFIC_API_HOST"))
 val MESSAGES_TO_NUMBER = envVar("MESSAGES_TO_NUMBER")
 val MESSAGES_MESSAGE_ID = envVar("MESSAGES_MESSAGE_ID")
 val MESSAGES_IMAGE_URL = envVar("MESSAGES_IMAGE_URL")
@@ -96,8 +94,6 @@ val MESSAGES_SANDBOX_ALLOW_LISTED_FB_RECIPIENT_ID = envVar("MESSAGES_SANDBOX_ALL
 val MESSAGES_SANDBOX_WHATSAPP_NUMBER = envVar("MESSAGES_SANDBOX_WHATSAPP_NUMBER")
 
 // Network APIs
-val VNA_AUTH_REQ_ID = envVar("VNA_AUTH_REQ_ID")
-val VNA_AUTH_CODE = envVar("VNA_AUTH_CODE")
 val NV_MSISDN = envVar("NV_MSISDN")
 val NV_REDIRECT_URI = envVar("NV_REDIRECT_URI")
 val SIMSWAP_MSISDN = envVar("SIMSWAP_MSISDN")
