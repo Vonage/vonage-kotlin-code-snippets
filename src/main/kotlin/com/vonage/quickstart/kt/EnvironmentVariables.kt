@@ -30,9 +30,12 @@ import com.vonage.client.verify.Psd2Request
 import com.vonage.client.verify.VerifyRequest
 import com.vonage.client.voice.TextToSpeechLanguage
 import java.time.Instant
+import io.github.cdimascio.dotenv.Dotenv
+
+private val dotenv = Dotenv.load()
 
 fun envVar(name: String): String =
-    System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
+    dotenv[name] ?: throw IllegalStateException("Environment variable $name not set.")
 
 // Auth / General
 val VONAGE_API_KEY = envVar("VONAGE_API_KEY")
@@ -77,7 +80,7 @@ val WHATSAPP_CATALOG_ID = envVar("WHATSAPP_CATALOG_ID")
 val WHATSAPP_PRODUCT_ID = envVar("WHATSAPP_PRODUCT_ID")
 val WHATSAPP_STICKER_ID = envVar("WHATSAPP_STICKER_ID")
 val WHATSAPP_STICKER_URL = envVar("WHATSAPP_STICKER_URL")
-val WHATSAPP_HEADER_IMAGE_URL = envVar("HEADER_IMAGE_URL")
+val WHATSAPP_HEADER_IMAGE_URL = envVar("WHATSAPP_HEADER_IMAGE_URL")
 val WHATSAPP_TEMPLATE_NAMESPACE = envVar("WHATSAPP_TEMPLATE_NAMESPACE")
 val WHATSAPP_AUTH_TEMPLATE_NAME = envVar("WHATSAPP_AUTH_TEMPLATE_NAME")
 val WHATSAPP_TEMPLATE_REPLACEMENT_TEXT = envVar("WHATSAPP_TEMPLATE_REPLACEMENT_TEXT")
@@ -112,7 +115,7 @@ val NUMBER_SEARCH_CRITERIA = envVar("NUMBER_SEARCH_CRITERIA")
 val NUMBER_SEARCH_PATTERN = SearchPattern.entries[envVar("NUMBER_SEARCH_PATTERN").toInt()]
 val NUMBER_SMS_CALLBACK_URL = envVar("NUMBER_SMS_CALLBACK_URL")
 val NUMBER_VOICE_CALLBACK_URL = envVar("NUMBER_VOICE_CALLBACK_URL")
-val NUMBER_VOICE_CALLBACK_TYPE = UpdateNumberRequest.CallbackType.fromString(envVar("VOICE_CALLBACK_TYPE"))
+val NUMBER_VOICE_CALLBACK_TYPE = UpdateNumberRequest.CallbackType.fromString(envVar("NUMBER_VOICE_CALLBACK_TYPE"))
 val NUMBER_VOICE_STATUS_CALLBACK_URL = envVar("NUMBER_VOICE_STATUS_CALLBACK_URL")
 
 // Pricing
