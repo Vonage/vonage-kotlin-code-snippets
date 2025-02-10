@@ -34,7 +34,7 @@ import java.time.Instant
 fun envVar(name: String): String =
     System.getenv(name) ?: throw IllegalStateException("Environment variable $name not set.")
 
-// Ath / General
+// Auth / General
 val VONAGE_API_KEY = envVar("VONAGE_API_KEY")
 val VONAGE_API_SECRET = envVar("VONAGE_API_SECRET")
 val VONAGE_SIGNATURE_SECRET = envVar("VONAGE_SIGNATURE_SECRET")
