@@ -1,5 +1,6 @@
 # Vonage Quickstart Examples for Kotlin
 
+![SLOC](https://sloc.xyz/github/Vonage/vonage-kotlin-code-snippets)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Community Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://developer.vonage.com/community/slack)
@@ -33,7 +34,6 @@ Most APIs will require you to [create an application](https://dashboard.nexmo.co
    2. To work with a different / specific version of the SDK or any dependencies, edit the `build.gradle.kts` file.
 4. Copy `.env-example` to `.env` and edit the values. The [EnvironmentVariables.kt](src/main/kotlin/com/vonage/quickstart/kt/EnvironmentVariables.kt) file is where they're loaded.
 5. Use your IDE to run the examples you are interested in.
-You will need to point the run configuration to use the `.env` file as an environment variable.
 
 ## Searchable Examples
 See [SNIPPETS.md](SNIPPETS.md) for an aggregated list of all the code in this repository. You can then

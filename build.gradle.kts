@@ -1,3 +1,7 @@
+
+// This is a workaround for the required property in com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+project.setProperty("mainClassName", "AggregateSnippetsKt")
+
 plugins {
     kotlin("jvm") version "2.1.+"
     id("io.ktor.plugin") version "3.0.+"
