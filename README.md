@@ -1,5 +1,7 @@
 # Vonage Quickstart Examples for Kotlin
 
+[![Build Status](https://github.com/Vonage/vonage-kotlin-code-snippets/actions/workflows/build.yml/badge.svg)](https://github.com/Vonage/vonage-kotlin-sdk/actions/workflows/build.yml)
+![CodeQL](https://github.com/Vonage/vonage-kotlin-code-snippets/actions/workflows/codeql.yml/badge.svg)
 ![SLOC](https://sloc.xyz/github/Vonage/vonage-kotlin-code-snippets)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
