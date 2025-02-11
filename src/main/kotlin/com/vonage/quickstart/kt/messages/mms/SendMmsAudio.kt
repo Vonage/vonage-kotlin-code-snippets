@@ -27,15 +27,15 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         mmsAudio {
-            to(TO_NUMBER)
-            from(VONAGE_FROM_NUMBER)
-            url(AUDIO_URL)
-            caption(AUDIO_CAPTION)
+            to(MESSAGES_TO_NUMBER)
+            from(MMS_SENDER_ID)
+            url(MESSAGES_AUDIO_URL)
+            caption(MESSAGES_CAPTION)
         }
     )
 }

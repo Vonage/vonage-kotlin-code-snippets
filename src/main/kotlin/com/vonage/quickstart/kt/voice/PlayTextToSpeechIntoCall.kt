@@ -22,16 +22,15 @@
 package com.vonage.quickstart.kt.voice
 
 import com.vonage.client.kt.*
-import com.vonage.client.voice.TextToSpeechLanguage
 import com.vonage.quickstart.kt.*
 
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val response = client.voice.call(CALL_UUID).startTalk(TEXT) {
-        language(TextToSpeechLanguage.AMERICAN_ENGLISH)
+    val response = client.voice.call(VOICE_CALL_ID).startTalk(VOICE_TEXT) {
+        language(VOICE_LANGUAGE)
     }
 }

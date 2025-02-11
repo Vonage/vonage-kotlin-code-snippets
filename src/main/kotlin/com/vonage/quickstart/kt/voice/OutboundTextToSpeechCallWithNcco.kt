@@ -27,12 +27,12 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val callEvent = client.voice.createCall {
-        toPstn(TO_NUMBER)
-        from(VONAGE_NUMBER)
+        toPstn(VOICE_TO_NUMBER)
+        from(VONAGE_VIRTUAL_NUMBER)
         ncco(
             talkAction("This is a text to speech call from Vonage")
         )

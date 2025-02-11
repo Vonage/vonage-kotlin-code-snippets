@@ -25,8 +25,7 @@ import com.vonage.client.kt.conversationAction
 import com.vonage.client.voice.EventWebhook
 import com.vonage.client.voice.ncco.EventMethod
 import com.vonage.client.voice.ncco.Ncco
-import com.vonage.quickstart.kt.CONF_NAME
-import io.ktor.server.application.call
+import com.vonage.quickstart.kt.VOICE_CONFERENCE_NAME
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.request.path
@@ -44,7 +43,7 @@ fun main() {
                 call.response.header("Content-Type", "application/json")
                 call.respond(
                     Ncco(
-                        conversationAction(CONF_NAME) {
+                        conversationAction(VOICE_CONFERENCE_NAME) {
                             record(true)
                             eventMethod(EventMethod.POST)
                             eventUrl(call.request.path().replace("answer", "recordings"))

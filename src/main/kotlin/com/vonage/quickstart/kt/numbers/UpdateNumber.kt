@@ -30,9 +30,9 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    client.numbers.number(COUNTRY_CODE, VONAGE_NUMBER).update {
-        moHttpUrl(SMS_CALLBACK_URL)
-        voiceCallback(VOICE_CALLBACK_TYPE, VOICE_CALLBACK_VALUE)
-        voiceStatusCallback(VOICE_STATUS_URL)
+    client.numbers.number(NUMBER_COUNTRY_CODE, NUMBER_MSISDN).update {
+        moHttpUrl(NUMBER_SMS_CALLBACK_URL)
+        voiceCallback(NUMBER_VOICE_CALLBACK_TYPE, NUMBER_VOICE_CALLBACK_URL)
+        voiceStatusCallback(NUMBER_VOICE_STATUS_CALLBACK_URL)
     }
 }

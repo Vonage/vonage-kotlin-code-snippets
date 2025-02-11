@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.pricing.getOutboundVoicePriceForCountry(COUNTRY_CODE)
+    val response = client.pricing.getOutboundVoicePriceForCountry(PRICING_COUNTRY_CODE)
     println("${response.defaultPrice} ${response.currency} per minute.")
 }

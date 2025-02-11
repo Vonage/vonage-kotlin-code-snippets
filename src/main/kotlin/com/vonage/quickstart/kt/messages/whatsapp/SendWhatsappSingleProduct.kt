@@ -27,15 +27,15 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         whatsappSingleProduct {
-            to(TO_NUMBER)
-            from(VONAGE_WHATSAPP_NUMBER)
-            catalogId(CATALOG_ID)
-            productRetailerId(PRODUCT_ID)
+            to(MESSAGES_TO_NUMBER)
+            from(WHATSAPP_SENDER_ID)
+            catalogId(WHATSAPP_CATALOG_ID)
+            productRetailerId(WHATSAPP_PRODUCT_ID)
             bodyText("Check out this cool product")
             footerText("Sale now on!")
         }

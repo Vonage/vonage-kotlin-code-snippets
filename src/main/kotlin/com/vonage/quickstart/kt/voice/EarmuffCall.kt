@@ -27,10 +27,10 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val call = client.voice.call(CALL_UUID)
+    val call = client.voice.call(VOICE_CALL_ID)
     call.earmuff()
     Thread.sleep(3000)
     call.unearmuff()

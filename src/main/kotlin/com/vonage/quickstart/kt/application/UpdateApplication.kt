@@ -32,7 +32,7 @@ fun main() {
     }
 
     val application = client.application.application(VONAGE_APPLICATION_ID).update {
-        name("New App Name")
+        name(APPLICATION_NAME)
         messages {
             inbound {
                 address("https://example.com/webhooks/inbound")

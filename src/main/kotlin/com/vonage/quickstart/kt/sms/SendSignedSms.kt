@@ -33,8 +33,8 @@ fun main() {
     }
 
     val response = client.sms.sendText(
-        from = VONAGE_BRAND_NAME,
-        to = TO_NUMBER,
+        from = SMS_SENDER_ID,
+        to = SMS_TO_NUMBER,
         message = "Hello from Vonage SMS API"
     )
 

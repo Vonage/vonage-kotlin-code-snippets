@@ -27,11 +27,11 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val call = client.voice.call(CALL_UUID)
-    var streamInfo = call.streamAudio(AUDIO_URL)
+    val call = client.voice.call(VOICE_CALL_ID)
+    var streamInfo = call.streamAudio(VOICE_STREAM_URL)
     Thread.sleep(5000)
     streamInfo = call.stopStream()
 }

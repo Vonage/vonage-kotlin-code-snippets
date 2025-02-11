@@ -27,9 +27,9 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val template = client.verify.template(TEMPLATE_ID).get()
+    val template = client.verify.template(VERIFY_TEMPLATE_ID).get()
     println(template)
 }

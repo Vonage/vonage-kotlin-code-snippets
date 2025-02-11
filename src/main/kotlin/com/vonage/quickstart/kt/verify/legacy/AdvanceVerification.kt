@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verifyLegacy.request(REQUEST_ID).advance()
+    val response = client.verifyLegacy.request(VERIFY_REQUEST_ID).advance()
     println(response.errorText ?: "Verification advanced to next stage!")
 }

@@ -59,6 +59,8 @@ fun String.toHeadingTitle(): String {
     var result = this.replaceFirstChar { it.uppercase() }
         .replace(Regex("(?<!^)([A-Z])"), " $1")
         .replace("numberinsight", "Number Insight", true)
+        .replace("numberverification", "Number Verification", true)
+        .replace("simswap", "SIM Swap", true)
         .replace("whatsapp", "WhatsApp", true)
 
     val acronyms = arrayOf(

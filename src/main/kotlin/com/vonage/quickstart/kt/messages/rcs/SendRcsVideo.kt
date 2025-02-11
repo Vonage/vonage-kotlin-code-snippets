@@ -27,14 +27,14 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         rcsVideo {
-            to(TO_NUMBER)
+            to(MESSAGES_TO_NUMBER)
             from(RCS_SENDER_ID)
-            url(VIDEO_URL)
+            url(MESSAGES_VIDEO_URL)
         }
     )
 }

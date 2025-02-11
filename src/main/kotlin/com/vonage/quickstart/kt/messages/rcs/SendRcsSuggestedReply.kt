@@ -27,12 +27,12 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         rcsCustom {
-            to(TO_NUMBER)
+            to(MESSAGES_TO_NUMBER)
             from(RCS_SENDER_ID)
             custom(mapOf(
                 "contentMessage" to mapOf(

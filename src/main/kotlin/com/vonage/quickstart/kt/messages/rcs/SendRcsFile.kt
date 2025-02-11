@@ -27,14 +27,14 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         rcsFile {
-            to(TO_NUMBER)
+            to(MESSAGES_TO_NUMBER)
             from(RCS_SENDER_ID)
-            url(FILE_URL)
+            url(MESSAGES_FILE_URL)
         }
     )
 }

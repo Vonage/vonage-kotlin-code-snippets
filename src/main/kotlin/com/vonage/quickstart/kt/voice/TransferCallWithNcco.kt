@@ -27,10 +27,10 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    client.voice.call(CALL_UUID).transfer(
+    client.voice.call(VOICE_CALL_ID).transfer(
         talkAction("This is a transfer action using an inline NCCO.")
     )
 }

@@ -27,13 +27,13 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         smsText {
-            to(TO_NUMBER)
-            from(VONAGE_BRAND_NAME)
+            to(MESSAGES_TO_NUMBER)
+            from(SMS_SENDER_ID)
             text("This is an SMS text message sent using the Messages API")
         }
     )

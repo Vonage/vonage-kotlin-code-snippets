@@ -27,15 +27,15 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     println(client.messages.send(
         whatsappImage {
             to(MESSAGES_SANDBOX_ALLOW_LISTED_TO_NUMBER)
             from(MESSAGES_SANDBOX_WHATSAPP_NUMBER)
-            url(IMAGE_URL)
-            caption(IMAGE_CAPTION)
+            url(MESSAGES_IMAGE_URL)
+            caption(MESSAGES_CAPTION)
         },
         sandbox = true
     ))

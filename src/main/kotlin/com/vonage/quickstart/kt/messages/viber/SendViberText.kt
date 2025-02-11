@@ -27,13 +27,13 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     val messageId = client.messages.send(
         viberText {
-            to(TO_NUMBER)
-            from(VONAGE_VIBER_SERVICE_MESSAGE_ID)
+            to(MESSAGES_TO_NUMBER)
+            from(VIBER_SENDER_ID)
             text("This is a Viber text message sent using the Messages API")
         }
     )

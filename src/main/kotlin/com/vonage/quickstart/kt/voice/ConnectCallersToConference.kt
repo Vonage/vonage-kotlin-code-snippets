@@ -24,8 +24,7 @@ package com.vonage.quickstart.kt.voice
 import com.vonage.client.kt.conversationAction
 import com.vonage.client.kt.talkAction
 import com.vonage.client.voice.ncco.Ncco
-import com.vonage.quickstart.kt.CONF_NAME
-import io.ktor.server.application.call
+import com.vonage.quickstart.kt.VOICE_CONFERENCE_NAME
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.response.header
@@ -42,7 +41,7 @@ fun main() {
                     call.respond(
                         Ncco(
                             talkAction("Please wait while we connect you to the conference."),
-                            conversationAction(CONF_NAME)
+                            conversationAction(VOICE_CONFERENCE_NAME)
                         ).toJson()
                     )
                 }

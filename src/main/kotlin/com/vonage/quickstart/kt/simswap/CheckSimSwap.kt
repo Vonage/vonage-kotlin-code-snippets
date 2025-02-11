@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.vonage.quickstart.kt.messages.viber
+package com.vonage.quickstart.kt.simswap
 
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
@@ -30,11 +30,6 @@ fun main() {
         privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val messageId = client.messages.send(
-        viberFile {
-            to(MESSAGES_TO_NUMBER)
-            from(VIBER_SENDER_ID)
-            url(MESSAGES_FILE_URL)
-        }
-    )
+    val swapped = client.simSwap.checkSimSwap(SIMSWAP_MSISDN, SIMSWAP_MAX_AGE)
+    println("${if (swapped) "" else "No"} SIM Swap detected within the past $SIMSWAP_MAX_AGE hours.")
 }

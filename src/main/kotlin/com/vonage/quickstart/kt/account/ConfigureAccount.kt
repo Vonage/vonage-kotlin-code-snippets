@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val settings = client.account.updateSettings(incomingSmsUrl = SMS_CALLBACK_URL)
+    val settings = client.account.updateSettings(incomingSmsUrl = ACCOUNT_SMS_CALLBACK_URL)
     println("moCallBackUrl is now ${settings.incomingSmsUrl}")
 }

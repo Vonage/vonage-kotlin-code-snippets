@@ -24,7 +24,6 @@ package com.vonage.quickstart.kt.voice
 import com.vonage.client.kt.connectToPstn
 import com.vonage.client.voice.ncco.Ncco
 import com.vonage.quickstart.kt.*
-import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.response.header
@@ -40,8 +39,8 @@ fun main() {
                     call.response.header("Content-Type", "application/json")
                     call.respond(
                         Ncco(
-                            connectToPstn(YOUR_SECOND_NUMBER) {
-                                from(VONAGE_NUMBER)
+                            connectToPstn(VOICE_TO_NUMBER) {
+                                from(VONAGE_VIRTUAL_NUMBER)
                             }
                         ).toJson()
                     )

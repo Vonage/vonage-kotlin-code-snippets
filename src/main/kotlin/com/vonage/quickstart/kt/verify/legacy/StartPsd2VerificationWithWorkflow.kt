@@ -31,8 +31,8 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verifyLegacy.psd2Verify(RECIPIENT_NUMBER, AMOUNT, PAYEE_NAME) {
-        workflow(Psd2Request.Workflow.SMS_TTS_TTS)
+    val response = client.verifyLegacy.psd2Verify(VERIFY_NUMBER, VERIFY_AMOUNT, VERIFY_PAYEE_NAME) {
+        workflow(VERIFY_PSD2_WORKFLOW_ID)
     }
     if (response.status == VerifyStatus.OK) {
         println("Verification sent. Request ID: ${response.requestId}")

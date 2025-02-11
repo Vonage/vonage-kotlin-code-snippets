@@ -28,11 +28,11 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val response = client.verify.sendVerification(BRAND_NAME) {
-        whatsapp(TO_NUMBER, WHATSAPP_BUSINESS_NUMBER)
+    val response = client.verify.sendVerification(VERIFY_BRAND_NAME) {
+        whatsapp(VERIFY_NUMBER, VERIFY_WHATSAPP_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }

@@ -31,7 +31,7 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verifyLegacy.verify(RECIPIENT_NUMBER, BRAND_NAME)
+    val response = client.verifyLegacy.verify(VERIFY_NUMBER, VERIFY_BRAND_NAME)
     if (response.status == VerifyStatus.OK) {
         println("Verification sent. Request ID: ${response.requestId}")
     }

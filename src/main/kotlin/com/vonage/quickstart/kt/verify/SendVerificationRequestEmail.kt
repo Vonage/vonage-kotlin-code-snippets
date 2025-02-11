@@ -28,11 +28,11 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
-    val response = client.verify.sendVerification(BRAND_NAME) {
-        email(TO_EMAIL)
+    val response = client.verify.sendVerification(VERIFY_BRAND_NAME) {
+        email(VERIFY_TO_EMAIL)
     }
     println("Verification sent: ${response.requestId}")
 }

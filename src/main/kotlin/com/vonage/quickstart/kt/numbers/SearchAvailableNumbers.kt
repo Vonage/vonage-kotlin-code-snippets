@@ -31,9 +31,9 @@ fun main() {
     }
 
     val numbers = client.numbers.searchAvailable {
-        country(COUNTRY_CODE)
-        type(VONAGE_NUMBER_TYPE)
-        features(*VONAGE_NUMBER_FEATURES)
+        country(NUMBER_COUNTRY_CODE)
+        type(NUMBER_TYPE)
+        features(*NUMBER_FEATURES)
         pattern(NUMBER_SEARCH_PATTERN, NUMBER_SEARCH_CRITERIA)
     }
     for (number in numbers) {

@@ -27,14 +27,14 @@ import com.vonage.quickstart.kt.*
 fun main() {
     val client = Vonage {
         applicationId(VONAGE_APPLICATION_ID)
-        privateKeyPath(VONAGE_APPLICATION_PRIVATE_KEY_PATH)
+        privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
     }
 
     println(client.messages.send(
         messengerVideo {
             to(MESSAGES_SANDBOX_ALLOW_LISTED_FB_RECIPIENT_ID)
             from(MESSAGES_SANDBOX_FB_ID)
-            url(VIDEO_URL)
+            url(MESSAGES_VIDEO_URL)
         },
         sandbox = true
     ))

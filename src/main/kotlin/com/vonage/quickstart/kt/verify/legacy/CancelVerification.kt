@@ -30,6 +30,6 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    val response = client.verifyLegacy.request(REQUEST_ID).cancel()
+    val response = client.verifyLegacy.request(VERIFY_REQUEST_ID).cancel()
     println(response.status)
 }
