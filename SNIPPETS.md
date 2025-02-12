@@ -2276,12 +2276,12 @@ val application = client.application.create {
 ## Account
 ### Revoke Secret
 ```kotlin
-client.account.secrets().delete(ACCOUNT_SECRET_ID)
+client.account.secrets(ACCOUNT_ID).delete(ACCOUNT_SECRET_ID)
 ```
 
 ### Create Secret
 ```kotlin
-val secret = client.account.secrets().create(ACCOUNT_SECRET)
+val secret = client.account.secrets(ACCOUNT_ID).create(ACCOUNT_SECRET)
 println("ID: ${secret.id} created on: ${secret.created}")
 ```
 
@@ -2293,13 +2293,13 @@ println("Balance: €${balance.value}")
 
 ### Get Secret
 ```kotlin
-val secret = client.account.secrets().get(ACCOUNT_SECRET_ID)
+val secret = client.account.secrets(ACCOUNT_ID).get(ACCOUNT_SECRET_ID)
 println("ID: ${secret.id} created on: ${secret.created}")
 ```
 
 ### List Secrets
 ```kotlin
-val secrets = client.account.secrets().list()
+val secrets = client.account.secrets(ACCOUNT_ID).list()
 for (secret in secrets) {
     println("ID: ${secret.id} created on: ${secret.created}")
 }

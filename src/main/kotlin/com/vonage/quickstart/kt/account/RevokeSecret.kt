@@ -30,5 +30,5 @@ fun main() {
         apiSecret(VONAGE_API_SECRET)
     }
 
-    client.account.secrets().delete(ACCOUNT_SECRET_ID)
+    client.account.secrets(ACCOUNT_ID).delete(ACCOUNT_SECRET_ID)
 }
