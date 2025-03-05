@@ -62,6 +62,8 @@ fun String.toHeadingTitle(): String {
         .replace("numberverification", "Number Verification", true)
         .replace("simswap", "SIM Swap", true)
         .replace("whatsapp", "WhatsApp", true)
+        .replace("vcard", "vCard", true)
+        .replace("callncco", "Call NCCO", true)
 
     val acronyms = arrayOf(
         "jwt", "id", "uuid", "url", "sim",
