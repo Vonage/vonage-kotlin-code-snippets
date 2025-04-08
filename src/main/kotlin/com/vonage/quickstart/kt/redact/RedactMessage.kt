@@ -22,8 +22,8 @@
 package com.vonage.quickstart.kt.redact
 
 import com.vonage.client.kt.*
-import com.vonage.client.redact.RedactRequest
 import com.vonage.quickstart.kt.*
+import com.vonage.client.redact.Type
 
 fun main() {
     val client = Vonage {
@@ -35,5 +35,5 @@ fun main() {
     client.redact.redactMessage(VONAGE_REDACT_ID)
 
     // Inbound
-    client.redact.redactMessage(VONAGE_REDACT_ID, RedactRequest.Type.INBOUND)
+    client.redact.redactMessage(VONAGE_REDACT_ID, Type.INBOUND)
 }

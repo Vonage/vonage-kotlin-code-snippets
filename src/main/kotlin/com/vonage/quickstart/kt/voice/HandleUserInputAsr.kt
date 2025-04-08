@@ -25,6 +25,7 @@ import com.vonage.client.kt.inputAction
 import com.vonage.client.kt.speech
 import com.vonage.client.kt.talkAction
 import com.vonage.client.voice.EventWebhook
+import com.vonage.client.voice.ncco.Language
 import com.vonage.client.voice.ncco.Ncco
 import com.vonage.client.voice.ncco.SpeechSettings
 import io.ktor.server.application.call
@@ -49,7 +50,7 @@ fun main() {
                         inputAction {
                             eventUrl(call.request.path().replace("answer", "asr"))
                             speech {
-                                language(SpeechSettings.Language.ENGLISH_UNITED_STATES)
+                                language(Language.ENGLISH_UNITED_STATES)
                             }
                         }
                     ).toJson()

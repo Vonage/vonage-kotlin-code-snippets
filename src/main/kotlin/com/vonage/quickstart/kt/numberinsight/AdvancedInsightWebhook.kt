@@ -21,6 +21,7 @@
  */
 package com.vonage.quickstart.kt.numberinsight
 
+import com.vonage.client.Jsonable
 import com.vonage.client.insight.AdvancedInsightResponse
 import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
@@ -34,7 +35,7 @@ fun main() {
     embeddedServer(Netty, port = 8000) {
         routing {
             post ("/webhooks/insight") {
-                val insightDetails = AdvancedInsightResponse.fromJson(call.receive())
+                val insightDetails = Jsonable.fromJson(call.receive(), AdvancedInsightResponse::class.java)
                 println(insightDetails)
                 call.respond(204)
             }

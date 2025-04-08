@@ -22,12 +22,14 @@
 package com.vonage.quickstart.kt
 
 import com.vonage.client.ApiRegion
+import com.vonage.client.numbers.CallbackType
 import com.vonage.client.numbers.Feature
 import com.vonage.client.numbers.SearchPattern
 import com.vonage.client.numbers.Type
 import com.vonage.client.numbers.UpdateNumberRequest
 import com.vonage.client.verify.Psd2Request
 import com.vonage.client.verify.VerifyRequest
+import com.vonage.client.verify.Workflow
 import com.vonage.client.voice.TextToSpeechLanguage
 import java.time.Instant
 import io.github.cdimascio.dotenv.Dotenv
@@ -115,7 +117,7 @@ val NUMBER_SEARCH_CRITERIA = envVar("NUMBER_SEARCH_CRITERIA")
 val NUMBER_SEARCH_PATTERN = SearchPattern.entries[envVar("NUMBER_SEARCH_PATTERN").toInt()]
 val NUMBER_SMS_CALLBACK_URL = envVar("NUMBER_SMS_CALLBACK_URL")
 val NUMBER_VOICE_CALLBACK_URL = envVar("NUMBER_VOICE_CALLBACK_URL")
-val NUMBER_VOICE_CALLBACK_TYPE = UpdateNumberRequest.CallbackType.fromString(envVar("NUMBER_VOICE_CALLBACK_TYPE"))
+val NUMBER_VOICE_CALLBACK_TYPE = CallbackType.fromString(envVar("NUMBER_VOICE_CALLBACK_TYPE"))
 val NUMBER_VOICE_STATUS_CALLBACK_URL = envVar("NUMBER_VOICE_STATUS_CALLBACK_URL")
 
 // Pricing
@@ -155,8 +157,8 @@ val VERIFY_PAYEE_NAME = envVar("VERIFY_PAYEE_NAME")
 val VERIFY_AMOUNT = envVar("VERIFY_AMOUNT").toDouble()
 val VERIFY_REQUEST_ID = envVar("VERIFY_REQUEST_ID")
 val VERIFY_CODE = envVar("VERIFY_CODE")
-val VERIFY_WORKFLOW_ID = VerifyRequest.Workflow.entries.get(envVar("VERIFY_WORKFLOW_ID").toInt() + 1)
-val VERIFY_PSD2_WORKFLOW_ID = Psd2Request.Workflow.entries.get(envVar("VERIFY_WORKFLOW_ID").toInt() + 1)
+val VERIFY_WORKFLOW_ID = Workflow.entries.get(envVar("VERIFY_WORKFLOW_ID").toInt() + 1)
+val VERIFY_PSD2_WORKFLOW_ID = Workflow.entries.get(envVar("VERIFY_WORKFLOW_ID").toInt() + 1)
 val VERIFY_TO_EMAIL = envVar("VERIFY_TO_EMAIL")
 val VERIFY_FROM_EMAIL = envVar("VERIFY_FROM_EMAIL")
 val VERIFY_WHATSAPP_NUMBER = envVar("VERIFY_WHATSAPP_NUMBER")

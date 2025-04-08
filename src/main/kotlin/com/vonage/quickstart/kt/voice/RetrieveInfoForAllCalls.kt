@@ -35,11 +35,11 @@ fun main() {
     val yesterday = now.minus(Duration.ofDays(1))
 
     val calls = client.voice.listCalls {
-        dateStart(yesterday)
-        dateEnd(now)
+        startDate(yesterday)
+        endDate(now)
     }
 
-    calls.embedded.callInfos.forEach {
+    calls.callInfos.forEach {
         println(it.toJson())
     }
 }

@@ -48,7 +48,6 @@ fun main() {
                         recordAction {
                             eventUrl(call.request.path().replace("answer", "recordings"))
                             channels(2)
-                            split(SplitRecording.CONVERSATION)
                         },
                         connectToPstn(VOICE_TO_NUMBER) {
                             from(VONAGE_VIRTUAL_NUMBER)

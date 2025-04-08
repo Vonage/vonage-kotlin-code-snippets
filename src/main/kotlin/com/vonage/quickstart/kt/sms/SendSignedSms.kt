@@ -21,6 +21,7 @@
  */
 package com.vonage.quickstart.kt.sms
 
+import com.vonage.client.auth.hashutils.HashType
 import com.vonage.client.auth.hashutils.HashUtil
 import com.vonage.client.kt.*
 import com.vonage.quickstart.kt.*
@@ -29,7 +30,7 @@ fun main() {
     val client = Vonage {
         apiKey(VONAGE_API_KEY)
         signatureSecret(VONAGE_SIGNATURE_SECRET)
-        hashType(HashUtil.HashType.HMAC_SHA256)
+        hashType(HashType.HMAC_SHA256)
     }
 
     val response = client.sms.sendText(
