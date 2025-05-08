@@ -202,6 +202,24 @@ embeddedServer(Netty, port = 8000) {
 }.start(wait = true)
 ```
 
+### Send Message With Failover
+```kotlin
+val messageId = client.messages.send(
+    rcsText {
+        to(MESSAGES_TO_NUMBER)
+        from(RCS_SENDER_ID)
+        text("This is an RCS text message sent using the Messages API")
+        failover(
+            smsText {
+                to(MESSAGES_TO_NUMBER)
+                from(SMS_SENDER_ID)
+                text("This is an SMS sent using the Vonage Messages API.")
+            }
+        )
+    }
+)
+```
+
 ### RCS
 #### Send RCS Suggested Reply
 ```kotlin
