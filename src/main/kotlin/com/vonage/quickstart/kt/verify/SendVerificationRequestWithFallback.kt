@@ -32,7 +32,8 @@ fun main() {
 
     val response = client.verify.sendVerification(VERIFY_BRAND_NAME) {
         silentAuth(VERIFY_NUMBER)
-        email(VERIFY_TO_EMAIL)
+        sms(VERIFY_NUMBER)
+        voice(VERIFY_NUMBER)
     }
     println("Verification sent: ${response.requestId}")
 }
